@@ -21,6 +21,7 @@ const Header = () => {
     let displayError =  <>
     <h1>error message:</h1>
     <p>{error.message}</p>
+    <p>put in the right user name</p>
   </>
 
 
