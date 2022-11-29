@@ -31,7 +31,7 @@ const useSearchArts = () => {
         axios.get(`https://api.github.com/users/${textInput}/repos`)
         .then(data => { 
             //console.log(searchValue)
-            console.log(data.data)
+            console.log(data)
             dispatch(artsActions.setSearchArray(data.data))
             dispatch(artsActions.setIsLoading(false))
             dispatch(artsActions.setIsError(false))
