@@ -1,13 +1,15 @@
 import React from "react";
 import { useParams , NavLink, Outlet } from 'react-router-dom'
 
-const Welcome = () => {
+const Repo = (data) => {
 
+    console.log(data.data.name);
     return(
-        <div id="welcome">
-            <h1>The Art Institute of Chicago Museum</h1>
+        <div>
+            <h1>repo name</h1>
+            <h1>{data.data.name}</h1>
         </div>
     )
 }
 
-export default Welcome
+export default Repo

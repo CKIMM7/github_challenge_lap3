@@ -21,7 +21,6 @@ export default function SearchForm() {
     function handleSumbit(e) {
         e.preventDefault();
         dispatch(artsActions.setSearchValue(textInput))
-        navigate(`arts/search/${textInput}`);   
     }
 
 let search = {

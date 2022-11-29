@@ -17,7 +17,6 @@ const artsSlice = createSlice({
   },
   reducers: {
     setUserRepos(state, action) {
-      console.log(action.payload)
       state.userRepos = action.payload;
     },
 
@@ -62,7 +61,7 @@ const artsSlice = createSlice({
 
     setSearchArray(state, action) {
       //console.log(action.payload)
-      state.searchArray = [action.payload]
+      state.searchArray = action.payload
     },
 
     setIsLoading(state, action) {

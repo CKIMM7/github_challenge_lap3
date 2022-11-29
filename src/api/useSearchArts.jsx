@@ -15,6 +15,7 @@ const useSearchArts = () => {
     const dispatch = useDispatch()
 
     const searchValue = useSelector((state) => state.cart.searchValue);
+    const textInput = useSelector((state) => state.cart.textInput);
     const pageNum = useSelector((state) => state.cart.pageNum);
 
     useEffect(() => {
@@ -25,15 +26,17 @@ const useSearchArts = () => {
         const controller = new AbortController();
         const { signal } = controller;
 
-    
-        getArtsAxios(pageNum, signal, searchValue)
+        function callGitHub () {
+
+        axios.get(`https://api.github.com/users/${textInput}/repos`)
         .then(data => { 
             //console.log(searchValue)
-           // console.log(data)
+            console.log(data.data)
             dispatch(artsActions.setSearchArray(data.data))
             dispatch(artsActions.setIsLoading(false))
         })
         .catch((err)=> {
+            console.log(err)
             dispatch(artsActions.setIsLoading(false))
             //signal.aborted happens when controller.abort() gets called
             //by the user therefore do not need to return the err msg
@@ -41,11 +44,21 @@ const useSearchArts = () => {
             setIsError(true)
             setError({ message: err.message })
         })
+    }
+
+        const timeOutId = setTimeout(() => {
+            if(textInput) {
+            callGitHub()
+            }}
+        , 1000);
 
 
-        return () => controller.abort();    
+        return () => { 
+            console.log('comp unmount')
+            
+            clearTimeout(timeOutId);}    
 
-    }, [searchValue])
+    }, [textInput])
 
     return { isError, error, searchValue };
 }
