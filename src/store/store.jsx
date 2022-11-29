@@ -55,7 +55,7 @@ const artsSlice = createSlice({
     },
 
     setSearchArray(state, action) {
-      console.log(action.payload)
+      //console.log(action.payload)
       state.searchArray = [action.payload]
     },
 

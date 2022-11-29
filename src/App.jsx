@@ -5,25 +5,13 @@ import Header from "./Pages/layouts/Header"
 
 import axios from 'axios';
 
-import Art from './Pages/Art'
-import Arts from './Pages/Arts'
-import Welcome from './Pages/Welcome'
-import Artist from "./Pages/Artist";
-import ArtTest from "./Pages/Art/ArtTest";
-import ArtSearch from "./Pages/ArtSearch/ArtSearch";
-
-import ArtsContent from "./Pages/Arts/ArtsContent";
-import useGetArts from "./api/useGetArts";
 import useGetRepos from "./api/useGetRepos";
 
 
 function App() {
 
-  const {
-    isError,
-    error,
-    results,
-} = useGetRepos()
+  const { isError, error, results } = useGetRepos()
+  console.log(results);
 
 
 return (

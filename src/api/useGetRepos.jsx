@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { getGitUserAxios } from "./gitAxios";
+import { getGitUserAxiosRest } from "./gitAxios";
 import { useSelector, useDispatch } from 'react-redux';
 import { artsActions } from "../store/store";
+import axios from "axios";
 
 
 const useGetRepos = () => {
 
-    
     const [results, setResults] = useState([])
     const [isError, setIsError] = useState(false)
     const [error, setError] = useState({})
@@ -21,9 +21,9 @@ const useGetRepos = () => {
         const controller = new AbortController();
         const { signal } = controller;
     
-        getGitUserAxios()
+        axios.get('https://api.github.com/users/ckimm7/repos')
         .then(data => { 
-            console.log(data);
+            console.log(data)
             setResults(data);
 
         })
@@ -41,7 +41,7 @@ const useGetRepos = () => {
 
     }, [])
 
-    return { isError, error, searchValue, results };
+    return { isError, error, results };
 }
 
 export default useGetRepos;

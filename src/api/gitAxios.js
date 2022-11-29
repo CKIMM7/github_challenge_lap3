@@ -1,26 +1,14 @@
-import { Octokit, App } from "octokit";
+export const getGitUserAxiosRest = async() => {
 
-export const getGitUserAxios = async(username, type, direction) => {
 
-    const octokit = new Octokit({ auth: `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` });
+    let searchUrl = `https://api.github.com/users/ckimm7/repos`
 
-    const { data: { login },} = await octokit.rest.users.getAuthenticated();
-      console.log("Hello, %s", login);
-    return login;
+      let optionsChicagoInst = {
+        method: 'GET',
+        url: searchUrl,
+      };
 
-    // const response = await octokit.request('GET /users/{username}/repos{?type,sort,direction,per_page,page}', {
-    //     username: 'CKIMM7'
-    // })
 
-    return response;
+    const response = await axios.get(optionsChicagoInst);
+    return response.data;
 }
-
-
-
-
-
-  
-
-
-// const { data: { login }, } = await octokit.rest.users.getAuthenticated();
-// console.log("Hello, %s", login);
