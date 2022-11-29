@@ -14,8 +14,8 @@ const Repo = (data) => {
 
     return(
         <div>
-            <h1>repo name</h1>
-            <h1>{data.data.name}</h1>
+            {/* <h1 id="repo">repo name</h1> */}
+            <h1 id="repo-container">{data.data.name}</h1>
         </div>
     )
 }
