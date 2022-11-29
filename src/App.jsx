@@ -16,9 +16,13 @@ function App() {
   const searchArray = useSelector(state => state.cart.searchArray)
 
   const repos = searchArray.map((repo, i) => {
+    console.log(repo)
      return <Repo key={i} data={repo}></Repo>
   })
 
+
+  const noRepo = <p>this user has no repo</p>
+  console.log(searchArray.length)
 
 return (
   <Routes>

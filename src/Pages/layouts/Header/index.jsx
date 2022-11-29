@@ -16,7 +16,9 @@ const Header = () => {
     const isError = useSelector((state) => state.cart.isError);
     const error = useSelector((state) => state.cart.error);
     
-    console.log(isError)
+    const searchArray = useSelector(state => state.cart.searchArray)
+
+    console.log(searchArray.length)
 
     let displayError =  <>
     <h1>error message:</h1>
@@ -24,17 +26,19 @@ const Header = () => {
     <p>put in the right user name</p>
   </>
 
+  console.log(textInput)
+
+  let content = searchArray.length === 0 && textInput && !isLoading ? <h1>no repos for this user</h1> :  <Outlet /> 
 
     return( 
         <>
           <nav id='nav'>  
-
         <SearchForm />
-           </nav>
+           </nav> 
         <br />
         <br />
-        
-        {!isError && <Outlet />}
+
+        {!isError && content}
         {isError && displayError}
         {isLoading && textInput && <LoadingSpinner />}
     </>
