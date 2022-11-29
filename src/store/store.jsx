@@ -4,49 +4,32 @@ const artsSlice = createSlice({
   name: 'arts',
   initialState: {
       userRepos: [],
-      pageNum: 1,
-      nextPage: false,
-      arts: [],
-      artist: [],
-      categories:[],
       artistImage: '',
       searchValue: '',
       textInput: '' ,
       searchArray: [],
-      isLoading: false
+      isLoading: false,
+      isError: false,
+      error: {}
   },
   reducers: {
     setUserRepos(state, action) {
       state.userRepos = action.payload;
     },
 
-    setPageNum(state, action) {
-      state.pageNum = state.pageNum + action.payload
+    setIsLoading(state, action) {
+      //console.log(action.payload)
+      state.isLoading = action.payload
     },
 
-    getMoreArts(state, action) {
-        console.log(state.nextPage)
-        state.nextPage = !state.nextPage
-      },
-
-    setArts(state, action) {
-        console.log(action.payload)
-        state.arts = action.payload
-      },
-
-    setArtist(state, action) {
-        console.log(action.payload)
-        state.artist = action.payload
+    setIsError(state, action) {
+      //console.log(action.payload)
+      state.isError = action.payload
     },
 
-    setCategories(state, action) {
-      console.log(action.payload)
-      state.categories = action.payload
-    },
-
-    setArtistImage(state, action) {
-      console.log(action.payload)
-      state.artistImage = action.payload
+    setError(state, action) {
+      //console.log(action.payload)
+      state.error = action.payload
     },
 
     setTextInput(state, action) {
@@ -64,10 +47,7 @@ const artsSlice = createSlice({
       state.searchArray = action.payload
     },
 
-    setIsLoading(state, action) {
-      //console.log(action.payload)
-      state.isLoading = action.payload
-    }
+
 
   },
 });

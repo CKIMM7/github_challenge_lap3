@@ -34,6 +34,7 @@ const useSearchArts = () => {
             console.log(data.data)
             dispatch(artsActions.setSearchArray(data.data))
             dispatch(artsActions.setIsLoading(false))
+            dispatch(artsActions.setIsError(false))
         })
         .catch((err)=> {
             console.log(err)
@@ -41,21 +42,30 @@ const useSearchArts = () => {
             //signal.aborted happens when controller.abort() gets called
             //by the user therefore do not need to return the err msg
             if(signal.aborted) return;
-            setIsError(true)
-            setError({ message: err.message })
+            dispatch(artsActions.setIsError(true))
+            dispatch(artsActions.setError({ message: err.message }))
         })
     }
 
         const timeOutId = setTimeout(() => {
-            if(textInput) {
+            if(!textInput) {
+            
+            //init all
+            dispatch(artsActions.setSearchArray([]))
+            dispatch(artsActions.setIsLoading(false))
+            dispatch(artsActions.setIsError(false))  
+
+            } else {
             callGitHub()
-            }}
+            }
+
+        }
         , 1000);
 
 
         return () => { 
             console.log('comp unmount')
-            
+
             clearTimeout(timeOutId);}    
 
     }, [textInput])

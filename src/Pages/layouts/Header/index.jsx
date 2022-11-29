@@ -10,22 +10,32 @@ const Header = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     const isLoading = useSelector((state) => state.cart.isLoading);
+
+    const textInput = useSelector((state) => state.cart.textInput);
+
+    const isError = useSelector((state) => state.cart.isError);
+    const error = useSelector((state) => state.cart.error);
     
-    
+    console.log(isError)
+
+    let displayError =  <>
+    <h1>error message:</h1>
+    <p>{error.message}</p>
+  </>
+
 
     return( 
         <>
           <nav id='nav'>  
-        {location.pathname !== '/' && <NavLink className='home' to='/'>Home</NavLink>}
-        {location.pathname !== '/' && <NavLink className='credit' to='/credit'>Credit</NavLink>}
+
         <SearchForm />
            </nav>
-
-        {location.pathname === '/' && <NavLink className='enter' to='arts'>Enter</NavLink>}
         <br />
         <br />
-        <Outlet />
-        {isLoading && <LoadingSpinner />}
+        
+        {!isError && <Outlet />}
+        {isError && displayError}
+        {isLoading && textInput && <LoadingSpinner />}
     </>
     )
 }
