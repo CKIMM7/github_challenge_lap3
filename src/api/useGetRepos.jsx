@@ -24,7 +24,7 @@ const useGetRepos = () => {
         axios.get('https://api.github.com/users/ckimm7/repos')
         .then(data => { 
             console.log(data)
-            setResults(data);
+            dispatch(artsActions.setUserRepos(data.data))
 
         })
         .catch((err)=> {

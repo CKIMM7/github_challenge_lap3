@@ -4,15 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from "./Pages/layouts/Header"
 
 import axios from 'axios';
-
 import useGetRepos from "./api/useGetRepos";
 
 
 function App() {
 
-  const { isError, error, results } = useGetRepos()
-  console.log(results);
-
+  const { isError, error, results } = useGetRepos() 
+  const userReposArray = useSelector(state => state.cart.userRepos)
+  console.log(userReposArray);
 
 return (
   <Routes>

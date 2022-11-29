@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const artsSlice = createSlice({
   name: 'arts',
   initialState: {
+      userRepos: [],
       pageNum: 1,
       nextPage: false,
       arts: [],
@@ -15,6 +16,11 @@ const artsSlice = createSlice({
       isLoading: false
   },
   reducers: {
+    setUserRepos(state, action) {
+      console.log(action.payload)
+      state.userRepos = action.payload;
+    },
+
     setPageNum(state, action) {
       state.pageNum = state.pageNum + action.payload
     },
@@ -60,7 +66,7 @@ const artsSlice = createSlice({
     },
 
     setIsLoading(state, action) {
-      console.log(action.payload)
+      //console.log(action.payload)
       state.isLoading = action.payload
     }
 
