@@ -11,6 +11,8 @@ const Header = () => {
     const dispatch = useDispatch();
     const isLoading = useSelector((state) => state.cart.isLoading);
     
+    
+
     return( 
         <>
           <nav id='nav'>  
