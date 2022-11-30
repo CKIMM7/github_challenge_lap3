@@ -112,6 +112,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 
 #repodata-container li {
@@ -124,3 +125,7 @@ body {
   top: 300px;
 }
 
+#img{
+  display: table;
+  margin: 0 auto;
+}
