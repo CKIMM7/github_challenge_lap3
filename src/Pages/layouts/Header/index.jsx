@@ -34,6 +34,7 @@ const Header = () => {
 
     return( 
         <>
+        <h1>GITHUB REPO SEARCH ENGINE</h1>
           <nav id='nav'>  
         <SearchForm />
            </nav> 
