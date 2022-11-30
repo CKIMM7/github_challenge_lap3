@@ -30,12 +30,14 @@ const Header = () => {
 
   let content = searchArray.length === 0 && textInput && !isLoading ? <h1>no repos for this user</h1> :  <Outlet /> 
 
+  
+
     return( 
         <>
           <nav id='nav'>  
         <SearchForm />
            </nav> 
-
+        {!textInput && !isLoading && <img src='../../assets/github_logo.png' /> }
         {!isError && content}
         {isError && displayError}
         {isLoading && textInput && <LoadingSpinner />}
