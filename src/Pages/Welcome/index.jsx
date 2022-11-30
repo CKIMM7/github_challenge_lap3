@@ -12,7 +12,8 @@ const Repo = (data) => {
             <h1 id="repo-container">repo name:  {data.data.name}</h1>
             <p>owner: {data.data.owner.login}</p>
             <p>stargazer count:{data.data.stargazers_count}</p>
-            <p>visibility: {data.data.visibility}</p>
+            <p>visibility: {data.data.visibility}</p>            
+            <p>git clone url: {data.data.clone_url}</p>
             <img src={data.data.owner.avatar_url}></img>
         </div>
     )

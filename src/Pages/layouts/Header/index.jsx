@@ -35,8 +35,6 @@ const Header = () => {
           <nav id='nav'>  
         <SearchForm />
            </nav> 
-        <br />
-        <br />
 
         {!isError && content}
         {isError && displayError}
