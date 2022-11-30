@@ -92,8 +92,14 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 
 #repodata-container li {
   margin: 0 1em;
+}
+
+#img{
+  display: table;
+  margin: 0 auto;
 }
