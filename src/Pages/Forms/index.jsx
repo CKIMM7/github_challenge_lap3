@@ -31,9 +31,9 @@ let search = {
   return (
       <form onSubmit={handleSumbit} id="searchForm">
               {/* <label htmlFor="form-search">Search For Artists</label> */}
-              <input name={searchValue} type='text' placeholder='Search For Art' value={textInput} onChange={handleChange} id="form-search"/>
+              <input name={searchValue} type='text' value={textInput} onChange={handleChange} id="form-search" placeholder='Type in username'/>
 
-              <input type='submit' id='button'/>
+              {/* <input type='submit' id='button'/> */}
           </form>
   )
 }
