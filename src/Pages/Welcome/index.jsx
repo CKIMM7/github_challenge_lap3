@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams , NavLink, Outlet } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import { FaBeer } from 'react-icons/fa';
+import { VscAccount } from "react-icons/vsc";
 
 const Repo = (data) => {
     
@@ -9,10 +11,11 @@ const Repo = (data) => {
 
     return(
         <div>
+
             <h1 id="repo-container">repo name:  {data.data.name}</h1>
-                <div id="img">
+                <div id="img"> 
                 <img src={data.data.owner.avatar_url} width="400" height="400"></img>
-                    <p>owner: {data.data.owner.login}</p>
+                    <p><VscAccount />{data.data.owner.login}</p>
                     <p>stargazer count:{data.data.stargazers_count}</p>
                     <p>visibility: {data.data.visibility}</p>
                 </div>
