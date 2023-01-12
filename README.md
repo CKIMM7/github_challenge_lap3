@@ -18,9 +18,10 @@
 - Added custom hook for api requests to Github
 - Added Redux to save repo and api states
 - Added logic to show different output depending on outcome of api calls
+- Added S3 Bucket link to load homepage imgage
 
 ## Bugs
-- everything works without a problem but the github logo img does not show when deployed
+- no bug
 
 # Wins & Challenges
 ## wins
