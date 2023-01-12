@@ -18,6 +18,8 @@ const Repo = (data) => {
                     <p><VscAccount />{data.data.owner.login}</p>
                     <p>stargazer count:{data.data.stargazers_count}</p>
                     <p>visibility: {data.data.visibility}</p>
+                    <a href={data.data.html_url} target="_blank">Check It Out</a>
+
                 </div>
         </div>
     )

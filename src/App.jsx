@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from "./Pages/layouts/Header"
 import Repo from "./Pages/Welcome";
 
-import axios from 'axios';
 import useGetRepos from "./api/useGetRepos";
-import useSearchArts from "./api/useSearchArts";
 
 
 function App() {
