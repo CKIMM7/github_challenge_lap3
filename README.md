@@ -6,7 +6,6 @@
 - Clone or download the repo.
 - Open terminal and navigate to project folder.
 - Run npm install to install dependencies.
-- 
 
 ## Usage
 - Run npm run dev to launch React.
