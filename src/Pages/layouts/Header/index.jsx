@@ -38,7 +38,7 @@ const Header = () => {
           <nav id='nav'>  
         <SearchForm />
            </nav> 
-        {!textInput && !isLoading && <img src='../../../../assets/github_logo.png' /> }
+        {!textInput && !isLoading && <img src='https://student-server-bucket.s3.amazonaws.com/github_logo.png' /> }
         {!isError && content}
         {isError && displayError}
         {isLoading && textInput && <LoadingSpinner />}
